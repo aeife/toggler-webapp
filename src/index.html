@@ -25,22 +25,12 @@
       </nav>
 
       <aside class="left-off-canvas-menu show-for-small">
-        <ul class="side-nav">
-          <li><a ui-sref="login">Login</a></li>
-          <li><a href="#">Link 2</a></li>
-          <li><a href="#">Link 3</a></li>
-          <li><a href="#">Link 4</a></li>
-        </ul>
+        <toggler-sidebar></toggler-sidebar>
       </aside>
       <section class="main-section">
         <div class="small-12 columns">
           <div class="large-3 medium-4 columns">
-            <ul class="side-nav hide-for-small">
-              <li><a ui-sref="login">Login</a></li>
-              <li><a href="#">Link 2</a></li>
-              <li><a href="#">Link 3</a></li>
-              <li><a href="#">Link 4</a></li>
-            </ul>
+            <toggler-sidebar class="hide-for-small"></toggler-sidebar>
           </div>
           <div class="large-9 medium-8 columns">
             <div id="main-content" ui-view></div>
