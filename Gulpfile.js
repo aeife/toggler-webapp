@@ -19,9 +19,15 @@ var templateFiles = [srcBaseDir + 'app/**/*.html'];
 var mainSassFile = srcBaseDir + 'scss/main.scss';
 var sassFiles = [srcBaseDir + '/**/*.scss', '!' + srcBaseDir + '/bower_components/'];
 
-var vendorFiles = plugins.mainBowerFiles().filter(function (file) {
-    return file.indexOf('.js') > -1;
-});
+var vendorFiles = [
+  'src/bower_components/angular/angular.js',
+  'src/bower_components/ui-router/release/angular-ui-router.js',
+  'src/bower_components/angular-mocks/angular-mocks.js',
+  'src/bower_components/lodash/lodash.js',
+  'src/bower_components/angular-animate/angular-animate.js',
+  'src/bower_components/angular-aria/angular-aria.js',
+  'src/bower_components/angular-foundation/mm-foundation-tpls.js',
+];
 
 // dist files
 var jsDistFile = applicationName + '.js';
