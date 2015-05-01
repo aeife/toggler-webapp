@@ -2,7 +2,7 @@
 
 angular.module('toggler', [
     'ui.router',
-    'toggler.routes.login',
+    'toggler.components.login',
     'mm.foundation'
 ])
     .config(function ($locationProvider, $httpProvider) {

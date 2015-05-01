@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('toggler.routes.login', ['toggler.common.api.userClient'])
+angular.module('toggler.components.login', ['toggler.common.api.userClient'])
     .config(function ($stateProvider) {
         $stateProvider
             .state('login', {
                 url: '/login',
-                templateUrl: 'app/routes/login/login.tpl.html',
+                templateUrl: 'app/components/login/login.tpl.html',
                 controller: 'LoginCtrl',
                 controllerAs: 'LoginCtrl'
             });
