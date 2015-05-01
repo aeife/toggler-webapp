@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('toggler', []);
+angular.module('toggler', ['ngMaterial']);

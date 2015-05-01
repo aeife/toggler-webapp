@@ -19,7 +19,9 @@ var templateFiles = [srcBaseDir + 'app/**/*.html'];
 var mainSassFile = srcBaseDir + 'scss/main.scss';
 var sassFiles = [srcBaseDir + '/**/*.scss', '!' + srcBaseDir + '/bower_components/'];
 
-var vendorFiles = plugins.mainBowerFiles();
+var vendorFiles = plugins.mainBowerFiles().filter(function (file) {
+    return file.indexOf('.js') > -1;
+});
 
 // dist files
 var jsDistFile = applicationName + '.js';
