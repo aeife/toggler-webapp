@@ -18,6 +18,12 @@ angular.module('toggler.common.api.userClient', [])
           _user = res.data;
         });
       },
+      logout: function () {
+        return $http.delete('http://localhost:8080/api/v1/users/session')
+          .then(function () {
+            _user = null;
+          });
+      },
       getUser: function () {
         return _user;
       }

@@ -9,8 +9,14 @@ angular.module('toggler.components.login.widget', ['toggler.common.api.userClien
       controllerAs: 'LoginWidgetCtrl'
     };
   })
-  .controller('LoginWidgetCtrl', function (togglerUserClient) {
+  .controller('LoginWidgetCtrl', function (togglerUserClient, $state) {
     this.getUser = function () {
       return togglerUserClient.getUser();
+    };
+
+    this.logout = function () {
+      togglerUserClient.logout().then(function () {
+        $state.go('login');
+      });
     };
   });

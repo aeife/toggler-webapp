@@ -1,4 +1,7 @@
-<h3 ng-if="LoginWidgetCtrl.getUser()">{{LoginWidgetCtrl.getUser().username}}</h3>
+<div ng-if="LoginWidgetCtrl.getUser()">
+  <h3>{{LoginWidgetCtrl.getUser().username}}</h3>
+  <a ng-click="LoginWidgetCtrl.logout()">Logout</a>
+</div>
 
 <ul class="side-nav">
   <li ng-if="!LoginWidgetCtrl.getUser()">
