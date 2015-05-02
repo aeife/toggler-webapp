@@ -12,30 +12,25 @@
   <base href="/">
 </head>
 <body ng-app="toggler" ng-cloak>
-  <div class="off-canvas-wrap">
-    <div class="inner-wrap">
-      <nav class="tab-bar">
-        <section class="left-small show-for-small">
-          <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
-        </section>
-
-        <section class="middle tab-bar-section">
-          <h1 class="title">Toggler</h1>
-        </section>
-      </nav>
-
+  <div class="off-canvas-wrap ">
+    <div class="inner-wrap ">
       <aside class="left-off-canvas-menu show-for-small">
         <toggler-sidebar></toggler-sidebar>
       </aside>
-      <section class="main-section">
-        <div class="small-12 columns">
-          <div class="large-3 medium-4 columns">
-            <toggler-sidebar class="hide-for-small"></toggler-sidebar>
+      <section class="flex-layout-wrapper">
+          <nav class="tab-bar show-for-small">
+            <section class="left-small">
+              <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+            </section>
+          </nav>
+
+          <div class="flex-layout-content">
+            <div id="article-content" class="main-content" ui-view></div>
           </div>
-          <div class="large-9 medium-8 columns">
-            <div id="main-content" ui-view></div>
+          <div class="flex-layout-nav hide-for-small">
+            <toggler-sidebar></toggler-sidebar>
+
           </div>
-        </div>
       </section>
 
       <a class="exit-off-canvas"></a>

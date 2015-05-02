@@ -1,0 +1,27 @@
+body {
+  height: auto;
+}
+
+.flex-layout-wrapper {
+  display: flex;
+  flex: 1 0 auto;
+  @media #{$small-only} {
+    flex-direction: column;
+  }
+
+  min-height: 100vh;
+
+  .tab-bar a{
+    background-color: $off-canvas-bg;
+  }
+}
+
+.flex-layout-content {
+  flex: 1;
+}
+
+.flex-layout-nav {
+  flex: 0 0 $off-canvas-width;
+  order: -1;
+  background-color: $off-canvas-bg;
+}
