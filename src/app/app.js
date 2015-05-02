@@ -1,13 +1,24 @@
 'use strict';
 
 angular.module('toggler', [
-    'ui.router',
-    'toggler.components.login',
-    'toggler.components.sidebar',
-    'mm.foundation'
+  'ui.router',
+  'toggler.components.login',
+  'toggler.components.sidebar',
+  'toggler.components.dashboard',
+  'mm.foundation'
 ])
-    .config(function ($locationProvider, $httpProvider) {
-        $locationProvider.html5Mode(true);
+.config(function ($locationProvider, $httpProvider) {
+  $locationProvider.html5Mode(true);
 
-        $httpProvider.defaults.withCredentials = true;
-    });
+  $httpProvider.defaults.withCredentials = true;
+})
+.run(function (togglerUserClient, $rootScope, $state){
+  togglerUserClient.requestCurrentUser();
+
+  $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
+    if (toState.loginRequired && !togglerUserClient.getUser()) {
+      event.preventDefault();
+      $state.go('login');
+    }
+  });
+});
