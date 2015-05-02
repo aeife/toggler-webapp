@@ -18,7 +18,11 @@ angular.module('toggler', [
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
     if (toState.loginRequired && !togglerUserClient.getUser()) {
       event.preventDefault();
-      $state.go('login');
+      togglerUserClient.requestCurrentUser().then(function () {
+        $state.go(toState.name, toParams);
+      }, function () {
+        $state.go('login');
+      })
     }
   });
 });
