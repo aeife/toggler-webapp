@@ -3,10 +3,10 @@ body {
 }
 
 .flex-layout-wrapper {
-  display: flex;
-  flex: 1 0 auto;
+  @include display(flex);
+  @include flex(1 0 auto);
   @media #{$small-only} {
-    flex-direction: column;
+    @include flex-direction(column);
   }
 
   min-height: 100vh;
@@ -17,11 +17,11 @@ body {
 }
 
 .flex-layout-content {
-  flex: 1;
+  @include flex(1);
 }
 
 .flex-layout-nav {
-  flex: 0 0 $off-canvas-width;
-  order: -1;
+  @include flex(0 0 $off-canvas-width);
+  @include order(-1);
   background-color: $off-canvas-bg;
 }
