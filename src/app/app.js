@@ -5,6 +5,7 @@ angular.module('toggler', [
   'toggler.components.login',
   'toggler.components.sidebar',
   'toggler.components.dashboard',
+  'toggler.components.projects',
   'mm.foundation'
 ])
 .config(function ($locationProvider, $httpProvider) {
