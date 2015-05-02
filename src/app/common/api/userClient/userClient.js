@@ -8,13 +8,15 @@ angular.module('toggler.common.api.userClient', [])
             var userClient = {
                 loginWithCredentials: function (credentials) {
                     return $http.post('http://localhost:8080/api/v1/users/session', credentials)
-                        .then(function (user) {
-                            console.log(user);
-                            _user = user;
+                        .then(function (res) {
+                            _user = res.data;
                         });
                 },
                 fetchCurrentUser: function () {
 
+                },
+                getUser: function () {
+                  return _user;
                 }
             };
 
