@@ -6,7 +6,8 @@ angular.module('toggler', [
   'toggler.components.sidebar',
   'toggler.components.dashboard',
   'toggler.components.projects',
-  'mm.foundation'
+  'ngMaterial',
+  'ngMdIcons'
 ])
 .config(function ($locationProvider, $httpProvider) {
   $locationProvider.html5Mode(true);
@@ -26,4 +27,9 @@ angular.module('toggler', [
       })
     }
   });
+})
+.controller('MainCtrl', function ($mdSidenav) {
+  this.openLeftMenu = function() {
+    $mdSidenav('left').toggle();
+  };
 });

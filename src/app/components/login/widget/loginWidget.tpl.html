@@ -1,10 +1,10 @@
-<div ng-if="LoginWidgetCtrl.getUser()">
-  <h3>{{LoginWidgetCtrl.getUser().username}}</h3>
-  <a ng-click="LoginWidgetCtrl.logout()">Logout</a>
-</div>
+<ul class="main-menu" ng-if="LoginWidgetCtrl.getUser()">
+  <h3 class="menu-heading">{{LoginWidgetCtrl.getUser().username}}</h3>
+  <md-button ng-click="LoginWidgetCtrl.logout()">Logout</md-button>
+</ul>
 
-<ul class="side-nav">
+<ul class="main-menu">
   <li ng-if="!LoginWidgetCtrl.getUser()">
-    <a ui-sref="login">Login</a>
+    <md-button ui-sref="login">Login</md-button>
   </li>
 </ul>

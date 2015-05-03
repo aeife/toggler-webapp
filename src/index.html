@@ -11,30 +11,24 @@
 
   <base href="/">
 </head>
-<body ng-app="toggler" ng-cloak>
-  <div class="off-canvas-wrap ">
-    <div class="inner-wrap ">
-      <aside class="left-off-canvas-menu show-for-small">
-        <toggler-sidebar></toggler-sidebar>
-      </aside>
-      <section class="flex-layout-wrapper">
-          <nav class="tab-bar show-for-small">
-            <section class="left-small">
-              <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
-            </section>
-          </nav>
-
-          <div class="flex-layout-content">
-            <div id="article-content" class="main-content" ui-view></div>
-          </div>
-          <div class="flex-layout-nav hide-for-small">
-            <toggler-sidebar></toggler-sidebar>
-
-          </div>
-      </section>
-
-      <a class="exit-off-canvas"></a>
-    </div>
+<body ng-app="toggler" layout="row" ng-controller="MainCtrl as MainCtrl" md-no-ink>
+  <md-sidenav md-component-id="left" class="md-sidenav-left" md-is-locked-open="$mdMedia('gt-sm')">
+    <toggler-sidebar></toggler-sidebar>
+  </md-sidenav>
+  <div layout="column" role="main" flex>
+    <md-toolbar clas"md-default-theme">
+      <div class="md-toolbar-tools md-default-theme">
+        <md-button class="md-icon-button md-default-theme" ng-click="MainCtrl.openLeftMenu()" hide-gt-sm>
+          <ng-md-icon icon="menu"></ng-md-icon>
+        </md-button>
+        <div layout="row" flex class="fill-heigth">
+          <h2 class="mg-toolbar-item">Toggler</h2>
+        </div>
+      </div>
+    </md-toolbar>
+    <md-content>
+      <div id="article-content" class="main-content" ui-view></div>
+    </md-content>
   </div>
 
   <!-- inject:js -->

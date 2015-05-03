@@ -1,18 +1,14 @@
 <h1>login</h1>
 <form ng-submit="LoginCtrl.login()">
-  <div class="row">
-    <div class="small-12 columns">
-      <input ng-model="LoginCtrl.user.username" type="text" name="username" placeholder="username">
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-12 columns">
-      <input ng-model="LoginCtrl.user.password" type="password" name="password" placeholder="password">
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-12 medium-6 large-4 small-centered columns">
-      <button class="button expand">Default Button</button>
-    </div>
-  </div>
+  <md-input-container>
+    <label>Username</label>
+    <input type="text" ng-model="LoginCtrl.user.username">
+  </md-input-container>
+  <md-input-container>
+    <label>Password</label>
+    <input type="password" ng-model="LoginCtrl.user.password"></input>
+  </md-input-container>
+  <md-input-container>
+    <md-button>Login</md-button>
+  </md-input-container>
 </form>

@@ -1,27 +1,29 @@
-body {
-  height: auto;
+.main-menu, .main-menu ul {
+  list-style: none;
+  padding: 0;
 }
 
-.flex-layout-wrapper {
-  @include display(flex);
-  @include flex(1 0 auto);
-  @media #{$small-only} {
-    @include flex-direction(column);
-  }
-
-  min-height: 100vh;
-
-  .tab-bar a{
-    background-color: $off-canvas-bg;
-  }
+.main-menu .md-button {
+  border-radius: 0;
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  line-height: 40px;
+  margin: 0;
+  max-height: 40px;
+  overflow: hidden;
+  padding: 0px 16px;
+  text-align: left;
+  text-decoration: none;
+  white-space: normal;
+  width: 100%;
 }
 
-.flex-layout-content {
-  @include flex(1);
-}
-
-.flex-layout-nav {
-  @include flex(0 0 $off-canvas-width);
-  @include order(-1);
-  background-color: $off-canvas-bg;
+.menu-heading {
+  display: block;
+  line-height: 40px;
+  margin: 0;
+  padding: 0px 16px;
+  text-align: left;
+  width: 100%;
 }

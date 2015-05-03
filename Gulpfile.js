@@ -24,9 +24,10 @@ var vendorFiles = [
   'src/bower_components/ui-router/release/angular-ui-router.js',
   'src/bower_components/angular-mocks/angular-mocks.js',
   'src/bower_components/lodash/lodash.js',
+  'src/bower_components/angular-material/angular-material.js',
   'src/bower_components/angular-animate/angular-animate.js',
   'src/bower_components/angular-aria/angular-aria.js',
-  'src/bower_components/angular-foundation/mm-foundation-tpls.js',
+  'src/bower_components/angular-material-icons/angular-material-icons.js'
 ];
 
 // dist files
